@@ -13,20 +13,41 @@ namespace Lab2
         private int count;
 
 
-        public int Seq { get;}
-        public string Kind { get; }
-        public int Count { get; }
+        public int Seq
+        {
+            get
+            {
+                return seq;
+            }
+        }
+
+        public string Kind
+        {
+            get
+            {
+                return kind;
+            }
+        }
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
 
 
 
         public StockMovement(int seq, string kind, int count)
         {
-
+            this.seq = seq;
+            this.kind = kind;
+            this.count = count;
         }
 
         public string Describe()
         {
-
+            return $"               move {Seq}: {Kind} {Count}";
         }
 
     }

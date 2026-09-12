@@ -81,15 +81,10 @@ namespace Lab2
 
         }
 
-        public abstract string Category()
-        {
+        public abstract string Category();
 
-        }
-
-        public abstract decimal HandlingFee()
-        {
-
-        }
+        public abstract decimal HandlingFee();
+        
 
         public decimal ExtendedValue()
         {
@@ -102,11 +97,12 @@ namespace Lab2
             { 
                 return false; 
             }
-
             else 
             { 
-                count++;
+                quantityOnHand += count;
+                history = new List<StockMovement>();
                 nextSeq++;
+                return true;
             }
 
         }
