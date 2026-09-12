@@ -11,7 +11,13 @@ namespace Lab2
         private int shelfLifeDays;
 
         public const decimal SurchargeFee = 0.40m;
-        public int ShelfLifeDays { get; }
+        public int ShelfLifeDays
+        {
+            get
+            {
+                return shelfLifeDays;
+            }
+        }
         public bool IsOnSale { get; }
 
         public PerishableGood(string sku, string name, decimal unitPrice, int quantityOnHand, double weightPounds, int shelfLifeDays)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    public abstract class StockItem
+    public abstract class StockItem : IReportable
     {
         private string sku;
         private string name;
@@ -58,7 +58,7 @@ namespace Lab2
             this.sku = sku;
             this.name = name;
 
-            if (unitPrice < 0)
+            if (UnitPrice < 0)
             {
                 this.unitPrice = 0;
             }
@@ -67,7 +67,7 @@ namespace Lab2
                 this.unitPrice = unitPrice;
             }
 
-            if (quantityOnHand < 0)
+            if (QuantityOnHand < 0)
             {
                 this.quantityOnHand = 0;
             }
@@ -138,12 +138,17 @@ namespace Lab2
             return String.Format($"{Sku} {Name} {Category()}");
         }
 
+
+        //sku, name, category, qty, value
         public string ReportLine()
         {
-
+            return $"   {Sku,7} {Name,-21} {quantityOnHand} {ExtendedValue}";
         }
 
-
+        public override string ToString()
+        {
+            return Describe();
+        }
 
     }
 }
