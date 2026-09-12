@@ -100,14 +100,48 @@ namespace Lab2
             else 
             { 
                 quantityOnHand += count;
-                history = new List<StockMovement>();
+                history.Add(new StockMovement(nextSeq, "Received", count));
+                nextSeq++;
+                return true;
+            }
+        }
+
+        public bool Release(int count)
+        { 
+            if (count <= 0 || count > quantityOnHand)
+            {
+                return false;
+            }
+            else
+            {
+                quantityOnHand -= count;
+                history.Remove(new StockMovement(nextSeq, "Received", count));
                 nextSeq++;
                 return true;
             }
 
         }
 
+        public string MovementLines()
+        {
+            List<string> noNewline = new List<string>();
 
+            foreach (StockMovement movement in history)
+            {
+                noNewline.Add(movement.Describe());
+            }
+            return Environment.NewLine + noNewline.ToArray();
+        }
+
+        public virtual string Describe()
+        {
+            return String.Format($"{Sku} {Name} {Category()}");
+        }
+
+        public string ReportLine()
+        {
+
+        }
 
 
 
