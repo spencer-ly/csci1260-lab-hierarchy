@@ -21,7 +21,14 @@ namespace Lab2
         public DurableGood(string sku, string name, decimal unitPrice, int quantityOnHand, double weightPounds, int warrantyMonths) 
             : base(sku, name, unitPrice, quantityOnHand, weightPounds)
         {
-
+            if (warrantyMonths < 0)
+            {
+                this.warrantyMonths = 0;
+            }
+            else
+            {
+                this.warrantyMonths = warrantyMonths;
+            }
         }
 
         public override string Category()
