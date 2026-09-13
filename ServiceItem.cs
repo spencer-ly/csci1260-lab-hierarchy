@@ -35,7 +35,7 @@ namespace Lab2
         {
             if (laborHours < 0)
             {
-                laborHours = 0;
+                this.laborHours = 0;
             }
             else
             { 
