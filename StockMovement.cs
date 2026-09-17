@@ -47,7 +47,7 @@ namespace Lab2
 
         public string Describe()
         {
-            return $"               move {Seq}: {Kind} {Count}";
+            return $"    move {Seq}: {Kind} {Count}";
         }
 
     }

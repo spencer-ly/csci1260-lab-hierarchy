@@ -8,6 +8,6 @@ namespace Lab2
 {
     public interface IReportable
     {
-        string ReportLine();
+         string ReportLine();
     }
 }
