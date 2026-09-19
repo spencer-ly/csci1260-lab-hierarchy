@@ -159,10 +159,22 @@ namespace Lab2
         
         public void PrintReport()
         {
-            string equalsign = String.Format("{0}", "".PadLeft(60, '='));
-            String.Format("  {0} : ", Name);
+            Console.Write("============================================================\n");
+            Console.Write($"  RIVER CITY SUPPLY : INVENTORY REPORT\n");
+            Console.Write("============================================================\n");
+            Console.Write(string.Format("{0,-7} {1,-21} {2,-10} {3,4} {4,11}\n", "SKU", "ITEM", "CATEGORY", "QTY", "VALUE"));
+            Console.Write("------------------------------------------------------------\n");
+            
+            foreach (var item in items)
+            {
+                Console.Write($"{ReportLine()}\n");
+            }
+
+            Console.Write("------------------------------------------------------------\n");
+
 
         }
+
 
     }
 }

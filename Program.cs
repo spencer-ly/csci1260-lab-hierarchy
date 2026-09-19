@@ -61,4 +61,15 @@ static void Show(IReportable r)
     Console.Write(r.ReportLine());
 }
 
-Console.Write($"Top record: {(cheddar).Describe}\n");
+Console.Write($"Top record: {cheddar}\n");
+
+manager.SortByValue();
+
+manager.PrintReport();
+
+Console.WriteLine("\n");
+
+
+Console.Write("Contract check\n");
+Console.Write($"Records signing IDiscountable: \n");
+
