@@ -153,26 +153,27 @@ namespace Lab2
 
         public string ReportLine()
         {
-            return String.Format("{0}: {1} items, ${2:N2} on hand", Name, Count, TotalValue());
+            return String.Format("{0}: {1} items, ${2:N2} on hand", Name, Count, SaleValue());
         }
 
-        
         public void PrintReport()
         {
             Console.Write("============================================================\n");
-            Console.Write($"  RIVER CITY SUPPLY : INVENTORY REPORT\n");
+            Console.Write($"  {name.ToUpper()} : INVENTORY REPORT\n");
             Console.Write("============================================================\n");
             Console.Write(string.Format("{0,-7} {1,-21} {2,-10} {3,4} {4,11}\n", "SKU", "ITEM", "CATEGORY", "QTY", "VALUE"));
             Console.Write("------------------------------------------------------------\n");
-            
-            foreach (var item in items)
+
+            foreach (StockItem item in items)
             {
-                Console.Write($"{ReportLine()}\n");
+                Console.Write($"{item}\n");
             }
 
             Console.Write("------------------------------------------------------------\n");
-
-
+            Console.Write($"Records on file: {items.Count}\n");
+            Console.Write($"Total value on hand: {TotalValue()}\n");
+            Console.Write($"Value if every sale price were taken: {SaleValue()}\n");
+            Console.Write("------------------------------------------------------------\n");
         }
 
 

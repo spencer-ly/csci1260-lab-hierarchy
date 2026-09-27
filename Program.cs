@@ -17,6 +17,8 @@ StockItem giftWrapping = new ServiceItem("SRV21", "Gift wrapping", 15m, 3, 1);
 //4
 
 
+
+
 honey.Receive(6);       //request 1
 honey.Receive(6);       //request 1
 kettle.Release(2);      //request 2
@@ -29,6 +31,11 @@ manager.Add(kettle);
 manager.Add(cheddar);
 manager.Add(knifeSharpening);
 manager.Add(giftWrapping);
+
+List<StockItem> list = new List<StockItem>
+{
+    honey, kettle, cheddar, knifeSharpening, giftWrapping
+};
 
 
 if (!manager.Add(honey))
@@ -57,7 +64,6 @@ Console.Write($"Movements accepeted: {movementsAccepted}\n");
 
 static void Show(IReportable r)
 {
-
     Console.Write(r.ReportLine());
 }
 
@@ -71,5 +77,5 @@ Console.WriteLine("\n");
 
 
 Console.Write("Contract check\n");
-Console.Write($"Records signing IDiscountable: \n");
+Console.Write($"  Records signing IDiscountable: \n");
 

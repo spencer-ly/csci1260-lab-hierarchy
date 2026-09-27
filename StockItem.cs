@@ -142,7 +142,7 @@ namespace Lab2
         //sku, name, category, qty, value
         public string ReportLine()
         {
-            return $"   {Sku,7} {Name,-21} {quantityOnHand} {ExtendedValue}";
+            return $"   {Sku,7} {Name,-21} {Category,-10} {quantityOnHand,4} ${UnitPrice,11:N2}";
         }
 
         public override string ToString()
