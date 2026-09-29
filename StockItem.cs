@@ -88,7 +88,7 @@ namespace Lab2
 
         public decimal ExtendedValue()
         {
-            return (UnitPrice + HandlingFee()) * QuantityOnHand;
+            return (UnitPrice + HandlingFee()) * quantityOnHand;
         }
 
         public bool Receive(int count)
@@ -115,7 +115,7 @@ namespace Lab2
             else
             {
                 quantityOnHand -= count;
-                history.Remove(new StockMovement(nextSeq, "Received", count));
+                history.Add(new StockMovement(nextSeq, "Released", count));
                 nextSeq++;
                 return true;
             }
@@ -130,7 +130,7 @@ namespace Lab2
             {
                 noNewline.Add(movement.Describe());
             }
-            return Environment.NewLine + noNewline.ToArray();
+            return Environment.NewLine + string.Join(Environment.NewLine, noNewline);
         }
 
         public virtual string Describe()
@@ -142,7 +142,7 @@ namespace Lab2
         //sku, name, category, qty, value
         public string ReportLine()
         {
-            return $"   {Sku,7} {Name,-21} {Category,-10} {quantityOnHand,4} ${UnitPrice,11:N2}";
+            return $"   {Sku,-7} {Name,-21} {Category(),-10} {quantityOnHand,4} ${ExtendedValue(),11:N2}";
         }
 
         public override string ToString()

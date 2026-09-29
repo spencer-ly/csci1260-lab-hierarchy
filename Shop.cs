@@ -76,6 +76,7 @@ namespace Lab2
             return total;
         }
 
+        // calculates if item is on sale
         public decimal SaleValue()
         {
             decimal total = 0;
@@ -120,6 +121,7 @@ namespace Lab2
             return count;
         }
 
+        // Mat's beautiful double for loop
         public void SortByValue()
         {
             for (int i = 0; i < items.Count -1; i++)
@@ -166,16 +168,16 @@ namespace Lab2
 
             foreach (StockItem item in items)
             {
-                Console.Write($"{item}\n");
+                Console.Write($"{item.ReportLine()}\n");
             }
 
             Console.Write("------------------------------------------------------------\n");
             Console.Write($"Records on file: {items.Count}\n");
-            Console.Write($"Total value on hand: {TotalValue()}\n");
-            Console.Write($"Value if every sale price were taken: {SaleValue()}\n");
-            Console.Write("------------------------------------------------------------\n");
+            Console.Write($"Total value on hand: {TotalValue():N2}\n");
+            Console.Write($"Value if every sale price were taken: {SaleValue():N2}\n");
+            Console.Write("============================================================");
         }
 
-
+ 
     }
 }

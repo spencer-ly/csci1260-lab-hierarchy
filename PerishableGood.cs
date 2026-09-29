@@ -20,6 +20,7 @@ namespace Lab2
             }
         }
 
+        // item has sale if shelf life is less than 3 days
         public bool IsOnSale
         {
             get

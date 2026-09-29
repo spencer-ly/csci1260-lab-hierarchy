@@ -17,7 +17,7 @@ namespace Lab2
                 return laborHours;
             }
         }
-
+        // sale for more than 2 hours of labor performed
         public bool IsOnSale
         {
             get

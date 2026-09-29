@@ -20,7 +20,7 @@ StockItem giftWrapping = new ServiceItem("SRV21", "Gift wrapping", 15m, 3, 1);
 
 
 honey.Receive(6);       //request 1
-honey.Receive(6);       //request 1
+//honey.Receive(6);       //request 1
 kettle.Release(2);      //request 2
 kettle.Release(99);     //request 3
 cheddar.Receive(-5);    //request 4
@@ -77,5 +77,15 @@ Console.WriteLine("\n");
 
 
 Console.Write("Contract check\n");
-Console.Write($"  Records signing IDiscountable: \n");
+Console.Write($"  Records signing IDiscountable: {manager.SignedCount()} \n");
+Console.Write($"  Records signing IDiscountable: {manager.OnSaleCount()} \n");
+Console.Write($"  Difference between the two totals: {manager.TotalValue() - manager.SaleValue():N2}\n");
+
+Console.Write("Composition check\n");
+Console.Write($"  Movements recorded by HON01: {honey.MoveCount}");
+Console.Write($"{honey.MovementLines()} \n");
+Console.Write($"  Movements recorded by KTL11: {kettle.MoveCount}");
+Console.Write($"{kettle.MovementLines()} \n");
+Console.Write($"  Movements recorded by CHZ07: {cheddar.MoveCount}");
+Console.Write($"{cheddar.MovementLines()} \n");
 
