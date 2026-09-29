@@ -16,7 +16,8 @@ StockItem knifeSharpening = new ServiceItem("SRV20", "Knife sharpening", 60m, 2,
 StockItem giftWrapping = new ServiceItem("SRV21", "Gift wrapping", 15m, 3, 1);
 //4
 
-
+//StockItem bad = new StockItem("X", "Nope", 1m, 1); 
+//CS0144: Cannot create instance of abstract type or interface 'StockItem'
 
 
 honey.Receive(6);       //request 1
